@@ -5,6 +5,6 @@ namespace Penguin {
 
 	void Print()
 	{
-		printf("Welcome to the Penguin Engine\n");
+		printf("Welcome to the Penguin\n");
 	}
 }
