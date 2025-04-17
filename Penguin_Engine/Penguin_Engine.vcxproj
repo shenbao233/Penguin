@@ -11,12 +11,14 @@
     </ProjectConfiguration>
   </ItemGroup>
   <ItemGroup>
+    <ClInclude Include="src\Penguin\Log.h" />
     <ClInclude Include="src\Penguin.h" />
     <ClInclude Include="src\Penguin\Application.h" />
     <ClInclude Include="src\Penguin\core.h" />
     <ClInclude Include="src\Penguin\EnreyPoint.h" />
   </ItemGroup>
   <ItemGroup>
+    <ClCompile Include="src\Penguin\Log.cpp" />
     <ClCompile Include="src\Penguin\Application.cpp" />
   </ItemGroup>
   <PropertyGroup Label="Globals">
@@ -68,6 +70,8 @@
       <PreprocessorDefinitions>PG_PLATFORM_WINDOWS;PG_BUILD_DLL;_WINDLL;%(PreprocessorDefinitions)</PreprocessorDefinitions>
       <ConformanceMode>true</ConformanceMode>
       <LanguageStandard>stdcpp20</LanguageStandard>
+      <AdditionalIncludeDirectories>$(SolutionDir)Penguin_Engine\Vendor\spdlog\include</AdditionalIncludeDirectories>
+      <AdditionalOptions>/utf-8 %(AdditionalOptions)</AdditionalOptions>
     </ClCompile>
     <Link>
       <SubSystem>Console</SubSystem>
@@ -83,6 +87,8 @@
       <PreprocessorDefinitions>PG_PLATFORM_WINDOWS;PG_BUILD_DLL;_WINDLL;%(PreprocessorDefinitions)</PreprocessorDefinitions>
       <ConformanceMode>true</ConformanceMode>
       <LanguageStandard>stdcpp20</LanguageStandard>
+      <AdditionalIncludeDirectories>$(SolutionDir)Penguin_Engine\Vendor\spdlog\include</AdditionalIncludeDirectories>
+      <AdditionalOptions>/utf-8 %(AdditionalOptions)</AdditionalOptions>
     </ClCompile>
     <Link>
       <SubSystem>Console</SubSystem>

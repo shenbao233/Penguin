@@ -2,8 +2,8 @@
 
 // for use by Penguin application
 
-#include <stdio.h>
 #include "Penguin/Application.h"
+#include "Penguin/Log.h"
 
 // ---- Entry Point ---------
 #include "Penguin/EnreyPoint.h"
