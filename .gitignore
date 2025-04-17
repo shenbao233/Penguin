@@ -3,3 +3,6 @@
 bin/
 bin-int/
 Penguin_Engine/.vs/
+
+# FILES
+/Penguin.sln
