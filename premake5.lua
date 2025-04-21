@@ -28,7 +28,9 @@ project "Penguin_Engine"
 
     includedirs
     {
-        "Penguin_Engine/Vendor/spdlog/include"
+        "Penguin_Engine/src",
+        "Penguin_Engine/Vendor/spdlog/include",
+        "Penguin_Engine/Events"
     }
 
     filter "system:windows"

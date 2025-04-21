@@ -9,3 +9,5 @@
 #else
 	#error Penguin only support Windows!
 #endif //  PG_PLATFORM_WINDOWS
+
+#define BIT(x) (1 << x)

@@ -4,6 +4,9 @@
     <Filter Include="Penguin">
       <UniqueIdentifier>{5BA38C05-C782-0BA1-D09A-96773CF97102}</UniqueIdentifier>
     </Filter>
+    <Filter Include="Penguin\Events">
+      <UniqueIdentifier>{DF9A7381-CB68-6787-B4FC-D7ADA06943EC}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="src\Penguin.h" />
@@ -12,6 +15,18 @@
     </ClInclude>
     <ClInclude Include="src\Penguin\EnreyPoint.h">
       <Filter>Penguin</Filter>
+    </ClInclude>
+    <ClInclude Include="src\Penguin\Events\ApplicationEvent.h">
+      <Filter>Penguin\Events</Filter>
+    </ClInclude>
+    <ClInclude Include="src\Penguin\Events\Event.h">
+      <Filter>Penguin\Events</Filter>
+    </ClInclude>
+    <ClInclude Include="src\Penguin\Events\KeyEvent.h">
+      <Filter>Penguin\Events</Filter>
+    </ClInclude>
+    <ClInclude Include="src\Penguin\Events\MouseEvent.h">
+      <Filter>Penguin\Events</Filter>
     </ClInclude>
     <ClInclude Include="src\Penguin\Log.h">
       <Filter>Penguin</Filter>
