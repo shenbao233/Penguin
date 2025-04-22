@@ -2,8 +2,6 @@
 
 #include "Event.h"
 
-#include <sstream>
-
 namespace Penguin {
 
 	class PENGUIN_API MouseMovedEvent : public Event

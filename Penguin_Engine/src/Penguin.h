@@ -6,5 +6,5 @@
 #include "Penguin/Log.h"
 
 // ---- Entry Point ---------
-#include "Penguin/EnreyPoint.h"
+#include "Penguin/EntryPoint.h"
 // ---- Entry Point ---------

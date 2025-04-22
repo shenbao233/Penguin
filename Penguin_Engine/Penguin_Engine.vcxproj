@@ -76,7 +76,8 @@
   </PropertyGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
     <ClCompile>
-      <PrecompiledHeader>NotUsing</PrecompiledHeader>
+      <PrecompiledHeader>Use</PrecompiledHeader>
+      <PrecompiledHeaderFile>pgpch.h</PrecompiledHeaderFile>
       <WarningLevel>Level3</WarningLevel>
       <PreprocessorDefinitions>PG_PLATFORM_WINDOWS;PG_BUILD_DLL;PG_DEBUG;%(PreprocessorDefinitions)</PreprocessorDefinitions>
       <AdditionalIncludeDirectories>src;Vendor\spdlog\include;Events;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
@@ -99,7 +100,8 @@ xcopy /Q /E /Y /I ..\bin\Debug_x86_64\Penguin_Engine\Penguin_Engine.dll ..\bin\D
   </ItemDefinitionGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
     <ClCompile>
-      <PrecompiledHeader>NotUsing</PrecompiledHeader>
+      <PrecompiledHeader>Use</PrecompiledHeader>
+      <PrecompiledHeaderFile>pgpch.h</PrecompiledHeaderFile>
       <WarningLevel>Level3</WarningLevel>
       <PreprocessorDefinitions>PG_PLATFORM_WINDOWS;PG_BUILD_DLL;PG_RELEASE;%(PreprocessorDefinitions)</PreprocessorDefinitions>
       <AdditionalIncludeDirectories>src;Vendor\spdlog\include;Events;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
@@ -126,7 +128,8 @@ xcopy /Q /E /Y /I ..\bin\Release_x86_64\Penguin_Engine\Penguin_Engine.dll ..\bin
   </ItemDefinitionGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Dist|x64'">
     <ClCompile>
-      <PrecompiledHeader>NotUsing</PrecompiledHeader>
+      <PrecompiledHeader>Use</PrecompiledHeader>
+      <PrecompiledHeaderFile>pgpch.h</PrecompiledHeaderFile>
       <WarningLevel>Level3</WarningLevel>
       <PreprocessorDefinitions>PG_PLATFORM_WINDOWS;PG_BUILD_DLL;PG_DIST;%(PreprocessorDefinitions)</PreprocessorDefinitions>
       <AdditionalIncludeDirectories>src;Vendor\spdlog\include;Events;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
@@ -154,17 +157,21 @@ xcopy /Q /E /Y /I ..\bin\Dist_x86_64\Penguin_Engine\Penguin_Engine.dll ..\bin\Di
   <ItemGroup>
     <ClInclude Include="src\Penguin.h" />
     <ClInclude Include="src\Penguin\Application.h" />
-    <ClInclude Include="src\Penguin\EnreyPoint.h" />
+    <ClInclude Include="src\Penguin\EntryPoint.h" />
     <ClInclude Include="src\Penguin\Events\ApplicationEvent.h" />
     <ClInclude Include="src\Penguin\Events\Event.h" />
     <ClInclude Include="src\Penguin\Events\KeyEvent.h" />
     <ClInclude Include="src\Penguin\Events\MouseEvent.h" />
     <ClInclude Include="src\Penguin\Log.h" />
     <ClInclude Include="src\Penguin\core.h" />
+    <ClInclude Include="src\pgpch.h" />
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="src\Penguin\Application.cpp" />
     <ClCompile Include="src\Penguin\Log.cpp" />
+    <ClCompile Include="src\pgpch.cpp">
+      <PrecompiledHeader>Create</PrecompiledHeader>
+    </ClCompile>
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">

@@ -2,9 +2,6 @@
 
 #include "Penguin/core.h"
 
-#include <string>
-#include <functional>
-
 namespace Penguin {
 
 	// 封锁事件，即事件发生后立即分配并处理事件

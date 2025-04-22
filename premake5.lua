@@ -20,6 +20,9 @@ project "Penguin_Engine"
     targetdir ("bin/" .. outputdir .. "/%{prj.name}")
     objdir ("bin-int/" .. outputdir .. "/%{prj.name}")
 
+    pchheader "pgpch.h"
+    pchsource "Penguin_Engine/src/pgpch.cpp"
+
     files
     {
         "%{prj.name}/src/**.h",
