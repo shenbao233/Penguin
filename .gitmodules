@@ -1,3 +1,9 @@
 [submodule "Penguin_Engine/Vendor/spdlog"]
 	path = Penguin_Engine/Vendor/spdlog
 	url = https://github.com/gabime/spdlog
+[submodule "Penguin/Vendor/GLFW"]
+	path = Penguin/Vendor/GLFW
+	url = https://github.com/TheCherno/glfw
+[submodule "Penguin_Engine/Vendor/GLFW"]
+	path = Penguin_Engine/Vendor/GLFW
+	url = https://github.com/TheCherno/glfw

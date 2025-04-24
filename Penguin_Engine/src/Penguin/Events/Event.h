@@ -1,5 +1,7 @@
 #pragma once
 
+#include "pgpch.h"
+
 #include "Penguin/core.h"
 
 namespace Penguin {

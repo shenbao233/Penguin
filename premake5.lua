@@ -12,6 +12,12 @@ workspace "Penguin"
 
 outputdir = "%{cfg.buildcfg}_%{cfg.architecture}"
 
+-- Include directories relative to root folder (solution directory)
+IncludeDir = {}
+IncludeDir["GLFW"] = "Penguin_Engine/Vendor/GLFW/include"
+
+include "Penguin_Engine/Vendor/GLFW"
+
 project "Penguin_Engine"
     location "Penguin_Engine"
     kind "SharedLib"
@@ -33,7 +39,14 @@ project "Penguin_Engine"
     {
         "Penguin_Engine/src",
         "Penguin_Engine/Vendor/spdlog/include",
-        "Penguin_Engine/Events"
+        "Penguin_Engine/Events",
+        "%{IncludeDir.GLFW}"
+    }
+
+    links
+    {
+        "GLFW",
+        "opengl32.lib"
     }
 
     filter "system:windows"

@@ -80,7 +80,7 @@
       <PrecompiledHeaderFile>pgpch.h</PrecompiledHeaderFile>
       <WarningLevel>Level3</WarningLevel>
       <PreprocessorDefinitions>PG_PLATFORM_WINDOWS;PG_BUILD_DLL;PG_DEBUG;%(PreprocessorDefinitions)</PreprocessorDefinitions>
-      <AdditionalIncludeDirectories>src;Vendor\spdlog\include;Events;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>src;Vendor\spdlog\include;Events;Vendor\GLFW\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
       <DebugInformationFormat>EditAndContinue</DebugInformationFormat>
       <Optimization>Disabled</Optimization>
       <RuntimeLibrary>MultiThreadedDebug</RuntimeLibrary>
@@ -91,6 +91,7 @@
     <Link>
       <SubSystem>Windows</SubSystem>
       <GenerateDebugInformation>true</GenerateDebugInformation>
+      <AdditionalDependencies>opengl32.lib;%(AdditionalDependencies)</AdditionalDependencies>
       <ImportLibrary>..\bin\Debug_x86_64\Penguin_Engine\Penguin_Engine.lib</ImportLibrary>
     </Link>
     <PostBuildEvent>
@@ -104,7 +105,7 @@ xcopy /Q /E /Y /I ..\bin\Debug_x86_64\Penguin_Engine\Penguin_Engine.dll ..\bin\D
       <PrecompiledHeaderFile>pgpch.h</PrecompiledHeaderFile>
       <WarningLevel>Level3</WarningLevel>
       <PreprocessorDefinitions>PG_PLATFORM_WINDOWS;PG_BUILD_DLL;PG_RELEASE;%(PreprocessorDefinitions)</PreprocessorDefinitions>
-      <AdditionalIncludeDirectories>src;Vendor\spdlog\include;Events;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>src;Vendor\spdlog\include;Events;Vendor\GLFW\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
       <Optimization>Full</Optimization>
       <FunctionLevelLinking>true</FunctionLevelLinking>
       <IntrinsicFunctions>true</IntrinsicFunctions>
@@ -119,6 +120,7 @@ xcopy /Q /E /Y /I ..\bin\Debug_x86_64\Penguin_Engine\Penguin_Engine.dll ..\bin\D
       <SubSystem>Windows</SubSystem>
       <EnableCOMDATFolding>true</EnableCOMDATFolding>
       <OptimizeReferences>true</OptimizeReferences>
+      <AdditionalDependencies>opengl32.lib;%(AdditionalDependencies)</AdditionalDependencies>
       <ImportLibrary>..\bin\Release_x86_64\Penguin_Engine\Penguin_Engine.lib</ImportLibrary>
     </Link>
     <PostBuildEvent>
@@ -132,7 +134,7 @@ xcopy /Q /E /Y /I ..\bin\Release_x86_64\Penguin_Engine\Penguin_Engine.dll ..\bin
       <PrecompiledHeaderFile>pgpch.h</PrecompiledHeaderFile>
       <WarningLevel>Level3</WarningLevel>
       <PreprocessorDefinitions>PG_PLATFORM_WINDOWS;PG_BUILD_DLL;PG_DIST;%(PreprocessorDefinitions)</PreprocessorDefinitions>
-      <AdditionalIncludeDirectories>src;Vendor\spdlog\include;Events;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>src;Vendor\spdlog\include;Events;Vendor\GLFW\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
       <Optimization>Full</Optimization>
       <FunctionLevelLinking>true</FunctionLevelLinking>
       <IntrinsicFunctions>true</IntrinsicFunctions>
@@ -147,6 +149,7 @@ xcopy /Q /E /Y /I ..\bin\Release_x86_64\Penguin_Engine\Penguin_Engine.dll ..\bin
       <SubSystem>Windows</SubSystem>
       <EnableCOMDATFolding>true</EnableCOMDATFolding>
       <OptimizeReferences>true</OptimizeReferences>
+      <AdditionalDependencies>opengl32.lib;%(AdditionalDependencies)</AdditionalDependencies>
       <ImportLibrary>..\bin\Dist_x86_64\Penguin_Engine\Penguin_Engine.lib</ImportLibrary>
     </Link>
     <PostBuildEvent>
@@ -163,15 +166,23 @@ xcopy /Q /E /Y /I ..\bin\Dist_x86_64\Penguin_Engine\Penguin_Engine.dll ..\bin\Di
     <ClInclude Include="src\Penguin\Events\KeyEvent.h" />
     <ClInclude Include="src\Penguin\Events\MouseEvent.h" />
     <ClInclude Include="src\Penguin\Log.h" />
+    <ClInclude Include="src\Penguin\Window.h" />
     <ClInclude Include="src\Penguin\core.h" />
+    <ClInclude Include="src\Platform\Windows\WindowsWindow.h" />
     <ClInclude Include="src\pgpch.h" />
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="src\Penguin\Application.cpp" />
     <ClCompile Include="src\Penguin\Log.cpp" />
+    <ClCompile Include="src\Platform\Windows\WindowsWindow.cpp" />
     <ClCompile Include="src\pgpch.cpp">
       <PrecompiledHeader>Create</PrecompiledHeader>
     </ClCompile>
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="Vendor\GLFW\GLFW.vcxproj">
+      <Project>{154B857C-0182-860D-AA6E-6C109684020F}</Project>
+    </ProjectReference>
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">
